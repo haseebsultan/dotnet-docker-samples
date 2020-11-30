@@ -1,3 +1,8 @@
+ def dockerrun = 'docker run -p 8000:80 -d --name sampledotnet haseebsultan/dotnet-app:latest'
+ def dockerrm = 'docker container rm -f sampledotnet'
+ def dockerimagerm = 'docker image rmi -f haseebsultan/dotnet-app'
+
+
 pipeline{
     agent any
     stages{
@@ -30,9 +35,7 @@ pipeline{
 
        stage("Deployment of container"){
           steps{
-                def dockerrun = 'docker run -p 8000:80 -d --name sampledotnet haseebsultan/dotnet-app:latest'
-                def dockerrm = 'docker container rm -f sampledotnet'
-                def dockerimagerm = 'docker image rmi -f haseebsultan/dotnet-app'
+               
                 sshagent(['dockerhostpassword']) {
                  // some block
                 sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.60.124 ${dockerrm}"
