@@ -6,12 +6,7 @@
 pipeline{
     agent any
     stages{
-       stage("Pull Code From Github"){
-          steps{
-                git 'https://github.com/haseebsultan/dotnet-docker-samples.git'
-               }
-
-            }
+       
        stage("Build Docker File"){
           steps{
                 sh 'docker image build -t $JOB_NAME:v2.$BUILD_ID aspnetapp/.'
