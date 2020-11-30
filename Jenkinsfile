@@ -1,6 +1,6 @@
- def dockerrun = 'docker run -p 8000:80 -d --name sampledotnet haseebsultan/dotnet-app:latest'
+ def dockerrun = 'docker run -p 8000:80 -d --name sampledotnet haseebsultan/dot_net_descriptive_pipeline:latest'
  def dockerrm = 'docker container rm -f sampledotnet'
- def dockerimagerm = 'docker image rmi -f haseebsultan/dotnet-app'
+ def dockerimagerm = 'docker image rmi -f haseebsultan/dot_net_descriptive_pipeline'
 
 
 pipeline{
