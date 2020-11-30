@@ -15,8 +15,8 @@ pipeline{
        stage("Build Docker File"){
           steps{
                 sh 'docker image build -t $JOB_NAME:v2.$BUILD_ID aspnetapp/.'
-                sh 'docker image tag $JOB_NAME:v1.$BUILD_ID haseebsultan/$JOB_NAME:v2.$BUILD_ID'
-                sh 'docker image tag $JOB_NAME:v1.$BUILD_ID haseebsultan/$JOB_NAME:latest'
+                sh 'docker image tag $JOB_NAME:v2.$BUILD_ID haseebsultan/$JOB_NAME:v2.$BUILD_ID'
+                sh 'docker image tag $JOB_NAME:v2.$BUILD_ID haseebsultan/$JOB_NAME:latest'
                }
 
             }
